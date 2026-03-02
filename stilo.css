@@ -8,3 +8,17 @@ body{
 .carrossel{
     width: 100%;
 }
+h1,h2,h3{
+    font-family: 'Brush Script MT', cursive;
+}
+p{
+    font-family: 'Georgia,serft';
+    font-size: lipx;
+    color:darkviolet;
+}
+h1{
+    color:blueviolet;
+}
+h3{
+    color:darkorchid;
+}
