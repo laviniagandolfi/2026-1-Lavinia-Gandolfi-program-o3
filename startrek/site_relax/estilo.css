@@ -1,7 +1,7 @@
 body{
 margin:0;
 font-family:Arial;
-background:#f4f4f4;
+background:linear-gradient(120deg,#e4e4e4,#f4f4f4);
 }
 
 /* MENU */
@@ -125,12 +125,22 @@ background:#560b0b;
 
 .servicos{
 text-align:center;
-padding:100px;
-background:white;
+padding:80px 20px;
+background:#f8f8f8;
 }
 
 .servico{
-margin:5px;
+background:white;
+padding:25px;
+margin:20px auto;
+max-width:700px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.servico:hover{
+transform:scale(1.03);
 }
 
 
