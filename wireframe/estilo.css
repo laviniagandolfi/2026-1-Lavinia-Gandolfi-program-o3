@@ -17,9 +17,9 @@ header{
     top:0;
 }
 
-header h1{
+h1 {
     color:#ccc;
-    font-family: 'Sofia', cursive;
+    font-family: Arial, sans-serif;
 }
 
 nav a{
