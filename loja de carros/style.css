@@ -1,0 +1,267 @@
+:root {
+    --bg-color: #050505;
+    --card-bg: #11141d;
+    --primary-blue: #3b66ff;
+    --text-white: #ffffff;
+    --text-gray: #a0a0a0;
+    --border-color: #2a2a2a;
+    --transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-white);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.navbar {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-white);
+    text-decoration: none;
+    margin-right: 25px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover { color: var(--primary-blue); }
+
+/* Hero */
+.hero { padding: 100px 0; }
+.badge {
+    color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+h1 { font-size: 3rem; margin: 20px 0; }
+.hero p { color: var(--text-gray); max-width: 500px; margin-bottom: 30px; }
+
+/* Buttons */
+.btn {
+    padding: 12px 28px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary { background: var(--primary-blue); color: white; }
+.btn-secondary { background: transparent; border: 1px solid var(--border-color); color: white; margin-left: 10px; }
+.btn-outline { background: #1a1e2e; border: 1px solid var(--primary-blue); color: white; width: 100%; }
+.btn-white { background: white; color: var(--primary-blue); }
+.btn-outline-white { background: transparent; border: 1px solid white; color: white; margin-left: 10px; }
+
+/* Features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 60px 0;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border: 1px solid var(--border-color);
+}
+
+.feature-icon { width: 40px; height: 40px; border: 2px solid var(--primary-blue); margin-bottom: 15px; }
+
+/* Inventory & Cards */
+.section-header { text-align: center; margin: 80px 0 40px; }
+.filter-bar {
+    background: var(--card-bg);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.filter-group label { display: block; font-size: 0.8rem; margin-bottom: 5px; color: var(--text-gray); }
+.filter-group select { width: 100%; background: black; color: white; border: 1px solid var(--border-color); padding: 10px; }
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.car-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.car-image {
+    height: 200px;
+    background: #1a1e2e;
+    display: grid;
+    place-items: center;
+    color: var(--text-gray);
+}
+
+.car-info { padding: 20px; }
+.car-specs { display: flex; gap: 10px; margin: 15px 0; }
+.car-specs span { background: #1a1e2e; flex: 1; text-align: center; font-size: 0.75rem; padding: 5px; color: var(--text-gray); }
+.car-price { color: var(--primary-blue); font-weight: bold; font-size: 1.2rem; border: 1px solid var(--primary-blue); padding: 10px; text-align: center; margin-bottom: 10px; }
+
+/* CTA Section */
+.cta-banner {
+    background: var(--primary-blue);
+    padding: 80px 0;
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* Footer */
+.footer { background: var(--bg-color); padding: 80px 0 20px; border-top: 1px solid var(--border-color); }
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-links a, .footer-links p { display: block; color: var(--text-gray); text-decoration: none; margin-bottom: 10px; font-size: 0.9rem; }
+.social-icons { display: flex; gap: 10px; }
+.social-icons span { width: 35px; height: 35px; border: 1px solid var(--border-color); }
+.copyright { text-align: center; padding-top: 50px; color: var(--text-gray); font-size: 0.8rem; }
+
+/* Mobile */
+.mobile-menu-icon { display: none; background: none; border: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.mobile-menu-icon span { width: 25px; height: 2px; background: white; }
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .mobile-menu-icon { display: flex; }
+    .footer-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 2rem; }
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-color);
+        padding: 20px;
+        z-index: 100;
+    }
+}
+
+:root {
+    --primary: #0047FF; /* Azul moderno */
+    --dark: #121212;
+    --light: #f4f4f4;
+    --white: #ffffff;
+}
+
+/* Estilo dos Cards */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.car-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+}
+
+.car-image {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background: #eee;
+}
+
+.car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Isso garante que a foto preencha o espaço sem esticar */
+}
+
+.car-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--primary);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.car-info {
+    padding: 20px;
+}
+
+.car-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.car-specs {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.car-price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+/* Botões */
+.btn-outline {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
